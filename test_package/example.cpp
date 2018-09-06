@@ -4,7 +4,7 @@
 #include "pistache/endpoint.h"
 
 
-using namespace Net;
+using namespace Pistache;
 
 class HelloHandler : public Http::Handler {
 public:
