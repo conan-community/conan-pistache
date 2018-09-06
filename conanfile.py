@@ -38,3 +38,6 @@ class PistacheConan(ConanFile):
         self.cpp_info.includedirs = ['include', ]
         self.cpp_info.libs = ["pistache"]
 
+        if not self.settings.os == "Windows":
+            self.cpp_info.cppflags = ["-pthread"]
+
