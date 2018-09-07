@@ -22,6 +22,9 @@ class PistacheConan(ConanFile):
             if self.settings.compiler.libcxx != 'libstdc++11':
                 raise ConanException("You must use the setting compiler.libcxx=libstdc++11")
 
+        if self.settings.compiler == 'clang' and self.settings.compiler.libcxx != 'libstdc++11':
+            raise ConanException("You must use the setting compiler.libcxx=llibstdc++11")
+
     def source(self):
         git = tools.Git(folder=self.src_folder)
         git.clone("https://github.com/oktal/pistache.git", "master")
