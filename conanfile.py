@@ -35,15 +35,12 @@ class PistacheConan(ConanFile):
     def build(self):
         cmake = CMake(self)
         cmake.definitions["PISTACHE_BUILD_TESTS"] = False
-        cmake.definitions["PISTACHE_BUILD_EXAMPLES"] = True
+        cmake.definitions["PISTACHE_BUILD_EXAMPLES"] = False
         cmake.configure(source_folder=self.src_folder)
         cmake.build()
 
     def package(self):
         cmake = CMake(self)
-        cmake.definitions["PISTACHE_BUILD_TESTS"] = False
-        cmake.definitions["PISTACHE_BUILD_EXAMPLES"] = False
-        cmake.configure(source_folder=self.src_folder)
         cmake.install()
 
     def package_info(self):
