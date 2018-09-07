@@ -17,7 +17,7 @@ class PistacheConan(ConanFile):
     def src_folder(self):
         return "{}-{}".format(self.name, self.version)
 
-    def config_options(self):
+    def configure(self):
         if self.settings.compiler == 'gcc' and float(self.settings.compiler.version.value) >= 5.1:
             if self.settings.compiler.libcxx != 'libstdc++11':
                 raise ConanException("You must use the setting compiler.libcxx=libstdc++11")
