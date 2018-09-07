@@ -1,3 +1,5 @@
+
+import os
 from conans import ConanFile, CMake, tools
 from conans.errors import ConanException
 
@@ -31,6 +33,11 @@ class PistacheConan(ConanFile):
     def source(self):
         git = tools.Git(folder=self.src_folder)
         git.clone("https://github.com/oktal/pistache.git", "master")
+        tools.replace_in_file(os.path.join(self.src_folder, 'CMakeLists.txt'), 'project (pistache)',
+            """project (pistache)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+""")
 
     def build(self):
         cmake = CMake(self)
