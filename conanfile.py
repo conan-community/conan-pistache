@@ -3,13 +3,13 @@ from conans import ConanFile, CMake, tools
 
 class PistacheConan(ConanFile):
     name = "pistache"
-    version = "master"
-    license = "<Put the package license here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Pistache here>"
+    version = "d5608a1c22d15de4bb"
+    license = "Apache License 2.0"
+    url = "https://github.com/conan-community/conan-pistache.git"
+    description = "A high-performance REST Toolkit written in C++"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
+    options = {"shared": [True, False], "fPIC": [True, False]}
+    default_options = "shared=False", "fPIC=True"
     generators = "cmake"
 
     @property
@@ -19,6 +19,7 @@ class PistacheConan(ConanFile):
     def source(self):
         git = tools.Git(folder=self.src_folder)
         git.clone("https://github.com/oktal/pistache.git", "master")
+        git.checkout(element=self.version)
 
     def build(self):
         cmake = CMake(self)
