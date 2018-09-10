@@ -1,8 +1,5 @@
-[![Build Status](https://travis-ci.org/lasote/conan-zlib.svg)](https://travis-ci.org/lasote/conan-zlib)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/lasote/conan-zlib)](https://ci.appveyor.com/project/lasote/conan-zlib)
+[![Build Status](https://travis-ci.org/conan-community/conan-pistache.svg)](https://travis-ci.org/conan-communicty/conan-pistache)
 
-
-^^^ TODO: Change these images to the ones pointing to CI
 
 # conan-pistache
 
