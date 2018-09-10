@@ -47,5 +47,5 @@ conan_basic_setup()
     def package_info(self):
         self.cpp_info.includedirs = ['include', ]
         self.cpp_info.libs = ["pistache", ]
-        self.cpp_info.cppflags = ["-pthread", "-latomic"]
+        self.cpp_info.cppflags = ["-pthread"]
 
