@@ -25,7 +25,7 @@ int main() {
     Http::Endpoint server(addr);
     server.init(opts);
     server.setHandler(Http::make_handler<HelloHandler>());
-    //server.serve();
+    server.serveThreaded();
 
     server.shutdown();
 }
