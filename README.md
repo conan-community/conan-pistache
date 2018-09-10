@@ -12,14 +12,14 @@
 
 ## Basic setup
 
-    $ conan install pistache/d5608a1c22d15de4bb@conan/stable
+    $ conan install pistache/d5608a1@conan/stable
     
 ## Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
     
     [requires]
-    pistache/d5608a1c22d15de4bb@conan/stable
+    pistache/d5608a1@conan/stable
 
     [options]
     pistache:shared=True # False

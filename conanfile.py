@@ -6,7 +6,7 @@ from conans.errors import ConanException
 
 class PistacheConan(ConanFile):
     name = "pistache"
-    version = "d5608a1c22d15de4bb"
+    version = "d5608a1"
     license = "Apache License 2.0"
     url = "https://github.com/conan-community/conan-pistache.git"
     description = "A high-performance REST Toolkit written in C++"
