@@ -1,3 +1,14 @@
+env:
+   global:
+     - CONAN_REFERENCE: "pistache/d5608a1c22d15de4bb"
+     - CONAN_USERNAME: "conan"
+     - CONAN_LOGIN_USERNAME: "conanbot"
+     - CONAN_CHANNEL: "testing"
+     - CONAN_UPLOAD: "https://api.bintray.com/conan/conan-community/conan"
+     - CONAN_STABLE_BRANCH_PATTERN: "release/*"
+     - CONAN_UPLOAD_ONLY_WHEN_STABLE: 1 # Will only upload when the branch matches "release/*"
+     - CONAN_DOCKER_32_IMAGES: 1
+
 linux: &linux
    os: linux
    sudo: required
@@ -8,31 +19,31 @@ linux: &linux
 osx: &osx
    os: osx
    language: generic
-env:
-   global:
-     - PYTHONUNBUFFERED=1
-
 matrix:
    include:
+
       - <<: *linux
-        env: CONAN_GCC_VERSIONS=4.9 CONAN_ARCHS=x86_64 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conangcc49
+        env: CONAN_GCC_VERSIONS=4.8 CONAN_DOCKER_IMAGE=lasote/conangcc48 CONAN_ARCHS=x86_64
       - <<: *linux
-        env: CONAN_GCC_VERSIONS=5 CONAN_ARCHS=x86_64 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conangcc5
+        env: CONAN_GCC_VERSIONS=4.9 CONAN_DOCKER_IMAGE=lasote/conangcc49 CONAN_ARCHS=armv7hf
       - <<: *linux
-        env: CONAN_GCC_VERSIONS=6 CONAN_ARCHS=x86_64 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conangcc6
+        env: CONAN_GCC_VERSIONS=4.9 CONAN_DOCKER_IMAGE=lasote/conangcc49
       - <<: *linux
-        env: CONAN_GCC_VERSIONS=7 CONAN_ARCHS=x86_64 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conangcc7
-      #  - a x86 build for GCC
+        env: CONAN_GCC_VERSIONS=5 CONAN_DOCKER_IMAGE=lasote/conangcc5
       - <<: *linux
-        env: CONAN_GCC_VERSIONS=7 CONAN_ARCHS=x86 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conangcc7-i386
-      # Clang compilation
+        env: CONAN_GCC_VERSIONS=6 CONAN_DOCKER_IMAGE=lasote/conangcc6
       - <<: *linux
-        env: CONAN_CLANG_VERSIONS=4.0 CONAN_ARCHS=x86_64 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conanclang40
+        env: CONAN_GCC_VERSIONS=7 CONAN_DOCKER_IMAGE=lasote/conangcc7
       - <<: *linux
-        env: CONAN_CLANG_VERSIONS=5.0 CONAN_ARCHS=x86_64 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conanclang50
-      #  - a x86 build for Clang
+        env: CONAN_GCC_VERSIONS=8 CONAN_DOCKER_IMAGE=lasote/conangcc8
       - <<: *linux
-        env: CONAN_CLANG_VERSIONS=5.0 CONAN_ARCHS=x86 CONAN_BUILD_TYPES=Release CONAN_DOCKER_IMAGE=lasote/conanclang50-i386
+        env: CONAN_CLANG_VERSIONS=3.9 CONAN_DOCKER_IMAGE=lasote/conanclang39
+      - <<: *linux
+        env: CONAN_CLANG_VERSIONS=4.0 CONAN_DOCKER_IMAGE=lasote/conanclang40
+      - <<: *linux
+        env: CONAN_CLANG_VERSIONS=5.0 CONAN_DOCKER_IMAGE=lasote/conanclang50
+      - <<: *linux
+        env: CONAN_CLANG_VERSIONS=6.0 CONAN_DOCKER_IMAGE=lasote/conanclang60
 
 install:
   - chmod +x .travis/install.sh
