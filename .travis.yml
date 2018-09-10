@@ -1,6 +1,6 @@
 env:
    global:
-     - CONAN_REFERENCE: "pistache/d5608a1c22d15de4bb"
+     - CONAN_REFERENCE: "pistache/d5608a1"
      - CONAN_USERNAME: "conan"
      - CONAN_LOGIN_USERNAME: "conanbot"
      - CONAN_CHANNEL: "testing"
