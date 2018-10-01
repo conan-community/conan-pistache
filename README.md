@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/conan-community/conan-pistache.svg)](https://travis-ci.org/conan-communicty/conan-pistache)
+[![Build Status](https://travis-ci.org/conan-community/conan-pistache.svg?branch=release%2Fd5608a1)](https://travis-ci.org/conan-community/conan-pistache)
 
 
 # conan-pistache
