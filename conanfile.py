@@ -45,7 +45,6 @@ conan_basic_setup()
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.includedirs = ['include', ]
         self.cpp_info.libs = ["pistache", ]
         self.cpp_info.cppflags = ["-pthread", "-latomic"]
 
