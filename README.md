@@ -1,3 +1,5 @@
+[![Download](https://api.bintray.com/packages/conan-community/conan/pistache%3Aconan/images/download.svg) ](https://bintray.com/conan-community/conan/pistache%3Aconan/_latestVersion)
+
 [![Build Status](https://travis-ci.org/conan-community/conan-pistache.svg?branch=release%2Fd5608a1)](https://travis-ci.org/conan-community/conan-pistache)
 
 
