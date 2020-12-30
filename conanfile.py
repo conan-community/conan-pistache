@@ -20,6 +20,8 @@ class PistacheConan(ConanFile):
         return "{}-{}".format(self.name, self.version)
 
     def configure(self):
+        self.output.warn("[DEPRECATED] Package {}/{}@{}/{} is being deprecated. Change yours to require pistache/cci.20201127 instead"
+                         .format(self.name, self.version, self.user, self.channel)
         if self.settings.os != "Linux":
             raise ConanException("Only Linux supported")
 
